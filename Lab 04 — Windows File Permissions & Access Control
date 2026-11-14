@@ -1,1 +1,142 @@
+# Lab 04 — Windows File Permissions & Access Control
 
+**Project Type:** IT Help Desk Homelab
+
+**Environment:** Windows 11 Pro ARM64 | VMware Fusion | PowerShell
+
+**Focus:** NTFS Permissions, User Access Control, Permission Inheritance, Security Troubleshooting
+
+## 1. Project Overview
+
+This lab simulates a common IT help desk scenario involving a user who requires access to a company folder but should not be permitted to modify its contents.
+
+The objective was to configure Windows NTFS permissions, troubleshoot inherited permissions, and verify access restrictions using PowerShell.
+
+## 2. Lab Environment
+
+| Component | Configuration |
+|---|---|
+| Operating System | Windows 11 Pro ARM64 |
+| Virtualization | VMware Fusion |
+| Host Machine | Apple Silicon Mac |
+| Workstation | HELPDESK-PC01 |
+| Test User | Alex Morgan (`amorgan`) |
+| Test Folder | `C:\Company-Shared` |
+| Test File | `C:\Company-Shared\test.txt` |
+| Tools | File Explorer, Windows Security, PowerShell |
+
+## 3. Help Desk Incident Scenario
+
+**Ticket ID:** LAB-004  
+**Category:** Windows Security / File Permissions  
+**Priority:** Medium (Simulated)  
+**Status:** Resolved
+
+**User Report:**
+
+An employee requires access to a company folder to review documents. The IT department must ensure the employee can read files without modifying their contents.
+
+**Expected Outcome:**
+
+Configure appropriate file permissions and verify that unauthorized write attempts are blocked.
+
+## 4. Troubleshooting and Configuration
+
+### Step 1 — Create the Company Folder
+
+Created a folder named `Company-Shared` on the Windows C: drive.
+
+**Folder path:** `C:\Company-Shared`
+
+![Company shared folder](01-shared-folder-created.png)
+
+### Step 2 — Inspect NTFS Permissions
+
+Opened the folder's Properties and navigated to the Security tab to inspect existing user and group permissions.
+
+![Folder security settings](02-folder-security-settings.png)
+
+### Step 3 — Configure User Access
+
+Added the test account Alex Morgan (`amorgan`) and configured the account with Read & execute permissions.
+
+![User permissions](03-user-permissions.png)
+
+### Step 4 — Troubleshoot Permission Inheritance
+
+During testing, identified an inherited Authenticated Users permission that allowed Modify access to `test.txt`.
+
+Disabled inheritance on the test file, converted inherited permissions into explicit entries, and removed the unwanted Modify permission while preserving required access for other accounts.
+
+**Final file permissions:**
+
+| Account or Group | Permission |
+|---|---|
+| Alex Morgan | Read & execute |
+| Administrators | Full control |
+| SYSTEM | Full control |
+| Users | Read & execute |
+
+![Updated file permissions](04-file-permissions.png)
+
+### Step 5 — Verify Write Restrictions
+
+Used PowerShell to attempt to modify the test file:
+
+```powershell
+Add-Content "C:\Company-Shared\test.txt" "Permission Test"
+```
+
+**Result:**
+
+```text
+Add-Content : Access to the path
+'C:\Company-Shared\test.txt' is denied.
+```
+
+Windows successfully blocked the write operation.
+
+![Write access denied](05-write-access-denied.png)
+
+### Step 6 — Verify Read Access
+
+Used PowerShell to inspect the file:
+
+```powershell
+Get-Content "C:\Company-Shared\test.txt"
+```
+
+The expected result is successful execution without an error. Because the file is empty, no content is displayed.
+
+![Read access verification](06-read-access-success.png)
+
+## 5. Root Cause Analysis
+
+The test file retained an inherited Authenticated Users permission granting Modify access.
+
+The permissions required further adjustment to enforce the intended read-only access policy.
+
+## 6. Resolution
+
+- Inspected NTFS permissions on the folder and test file.
+- Configured Read & execute permissions for the test employee.
+- Identified and corrected unwanted inherited permissions.
+- Preserved Full control for Administrators and SYSTEM.
+- Verified that a PowerShell write operation was denied.
+
+## 7. Skills Demonstrated
+
+- Windows 11 file system administration
+- NTFS permission configuration
+- Local user access management
+- Permission inheritance troubleshooting
+- Windows security settings
+- PowerShell access testing
+- Root cause analysis
+- Help desk incident documentation
+
+## 8. Conclusion
+
+Successfully configured and tested Windows NTFS permissions in a simulated corporate help desk environment.
+
+The lab demonstrated how to investigate inherited permissions, apply appropriate access restrictions, and verify that Windows enforces the configured security policy.
