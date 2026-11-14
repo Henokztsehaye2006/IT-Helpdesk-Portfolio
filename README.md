@@ -13,11 +13,14 @@ Deployed a Windows 11 Pro ARM64 virtual machine using VMware Fusion. Practiced s
 
 Simulated a DNS failure on Windows 11, diagnosed the issue using PowerShell, nslookup, and ping, and restored DNS functionality.
 
+### [Lab 03 — Windows 11 User Account Management](Lab-03-Windows-User-Account-Management/README.md)
+
+Created and managed Windows 11 local user accounts, performed password resets, configured administrator permissions, and simulated employee onboarding and offboarding.
+
 **Skills:** Windows 11, PowerShell, VMware Fusion, TCP/IP, DNS.
 
 ## Upcoming Projects
 
-- Lab 03 — Windows User Management
 - Lab 04 — Windows Permissions and Shared Folders
 - Lab 05 — Help Desk Ticketing
 
