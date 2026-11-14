@@ -40,12 +40,12 @@ Hands-on IT support labs covering Windows 11, networking, troubleshooting, and u
 
 ## Evidence
 
-### 1. Windows System Information
-![Windows System Information](01-system-information.png)
+### 1. System Information
+![System Information](01-system-information.png)
 
 ### 2. Network Configuration
 ![Network Configuration](02-network-configuration.png)
 
-### 3. DNS Resolution
+### 3. DNS Lookup
 ![DNS Lookup](04-dns-lookup.png)
   
