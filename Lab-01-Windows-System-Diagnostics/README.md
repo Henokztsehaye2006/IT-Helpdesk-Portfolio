@@ -28,4 +28,12 @@ Deploy a Windows 11 virtual machine and practice basic IT support diagnostics.
 Windows 11, VMware Fusion, PowerShell, system diagnostics, basic networking, DNS troubleshooting.
 
 ## Evidence
-Screenshots will be added to the screenshots folder.
+
+### 1. System Information
+![System Information](./01-system-information.png)
+
+### 2. Network Configuration
+![Network Configuration](./02-network-configuration.png)
+
+### 3. DNS Lookup
+![DNS Lookup](./04-dns-lookup.png)
