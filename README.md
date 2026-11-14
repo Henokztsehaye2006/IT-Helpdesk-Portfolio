@@ -17,11 +17,14 @@ Simulated a DNS failure on Windows 11, diagnosed the issue using PowerShell, nsl
 
 Created and managed Windows 11 local user accounts, performed password resets, configured administrator permissions, and simulated employee onboarding and offboarding.
 
+### [Lab 04 — Windows File Permissions & Access Control](Lab-04-Windows-Permissions/README.md)
+
+Configured and troubleshot NTFS permissions, managed employee access, and verified read-only access using PowerShell to demonstrate Windows security and help desk troubleshooting skills.
+
 **Skills:** Windows 11, PowerShell, VMware Fusion, TCP/IP, DNS.
 
 ## Upcoming Projects
 
-- Lab 04 — Windows Permissions and Shared Folders
 - Lab 05 — Help Desk Ticketing
 
 *Independent hands-on IT learning projects.*
