@@ -1,1 +1,59 @@
+# Lab 02 — DNS Troubleshooting & Repair
 
+## Objective
+Diagnose and resolve a simulated DNS configuration issue on a Windows 11 virtual machine.
+
+## Lab Environment
+- Operating System: Windows 11 Pro ARM64
+- Virtualization: VMware Fusion
+- Host: Apple Silicon Mac
+- Tools: Windows PowerShell, nslookup, ping, Windows Network Settings
+
+## Scenario
+A user reports that websites are not loading despite having an active network connection.
+
+## Troubleshooting Process
+
+### 1. Identify the Original Configuration
+Checked the Ethernet adapter's DNS settings and identified the original DNS server as `192.168.41.2`, assigned automatically through DHCP.
+
+### 2. Simulate the Issue
+Changed the preferred DNS server to `192.0.2.1`, a reserved documentation IP address, to simulate an unavailable DNS resolver.
+
+### 3. Diagnose DNS Resolution
+Used `nslookup` to query `microsoft.com`.
+
+**Result:** Multiple DNS request timeouts.
+
+### 4. Test IP Connectivity
+Executed `ping 1.1.1.1`.
+
+**Result:** Four successful replies, 0% packet loss, and an average round-trip time of 32 ms.
+
+This demonstrated that IP connectivity remained functional while DNS resolution failed.
+
+### 5. Resolve the Issue
+Restored DNS server assignment to Automatic (DHCP) through Windows Network Settings.
+
+### 6. Verify the Repair
+Executed `nslookup microsoft.com` again.
+
+**Result:** The configured DNS server returned to `192.168.41.2`, and the query successfully returned IP address `150.171.110.211`.
+
+## Root Cause
+An intentionally misconfigured DNS server prevented domain name resolution.
+
+## Resolution
+Restored automatic DNS configuration and verified successful name resolution.
+
+## Skills Demonstrated
+- Windows 11 network troubleshooting
+- DNS configuration and repair
+- PowerShell command-line diagnostics
+- DNS lookup testing with nslookup
+- IP connectivity testing with ping
+- Root cause analysis
+- Technical documentation
+
+## Conclusion
+Successfully diagnosed and resolved a simulated DNS outage while demonstrating that basic IP connectivity can remain operational when DNS resolution fails.
