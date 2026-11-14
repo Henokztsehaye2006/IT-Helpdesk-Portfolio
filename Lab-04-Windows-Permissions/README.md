@@ -19,7 +19,7 @@ A company employee, Alex Morgan, requires access to a shared company folder. The
 ### 1. Create the Company Folder
 Created a folder at `C:\Company-Shared` to simulate a company resource.
 
-![Company Folder Created](01-company-folder-created.png)
+01-company-folder-created.png 
 
 ### 2. Inspect Original Permissions
 Opened the folder's Properties → Security tab to review existing NTFS permissions and security groups.
