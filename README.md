@@ -36,3 +36,16 @@ Deployed a Windows 11 Pro ARM64 virtual machine using VMware Fusion on an Apple 
 
 *All projects are independent hands-on learning exercises.*
 Hands-on IT support labs covering Windows 11, networking, troubleshooting, and user administration
+
+
+## Evidence
+
+### 1. Windows System Information
+![Windows System Information](01-system-information.png)
+
+### 2. Network Configuration
+![Network Configuration](02-network-configuration.png)
+
+### 3. DNS Resolution
+![DNS Lookup](04-dns-lookup.png)
+  
