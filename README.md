@@ -21,11 +21,12 @@ Created and managed Windows 11 local user accounts, performed password resets, c
 
 Configured and troubleshot NTFS permissions, managed employee access, and verified read-only access using PowerShell to demonstrate Windows security and help desk troubleshooting skills.
 
+### [Lab 05 — Help Desk Ticketing & Remote Support](Lab-05-Helpdesk-Ticketing/README.md)
+
+Used Jira Service Management to create, prioritize, assign, and troubleshoot IT support tickets, document technical findings, and manage approval workflows while demonstrating remote-support procedures.
+
 **Skills:** Windows 11, PowerShell, VMware Fusion, TCP/IP, DNS.
 
-## Upcoming Projects
-
-- Lab 05 — Help Desk Ticketing
 
 *Independent hands-on IT learning projects.*
   
