@@ -25,6 +25,11 @@ Configured and troubleshot NTFS permissions, managed employee access, and verifi
 
 Used Jira Service Management to create, prioritize, assign, and troubleshoot IT support tickets, document technical findings, and manage approval workflows while demonstrating remote-support procedures.
 
+### [Lab 06 — Microsoft Entra ID Administration](Lab-06-Microsoft365-EntraID/README.md)
+
+Managed cloud employee accounts, security groups, password resets, MFA security settings, and employee offboarding using Microsoft Entra ID.
+
+
 **Skills:** Windows 11, PowerShell, VMware Fusion, TCP/IP, DNS.
 
 
